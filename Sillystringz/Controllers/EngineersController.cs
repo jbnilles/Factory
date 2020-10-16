@@ -80,5 +80,13 @@ namespace Sillystringz.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        public ActionResult RemoveMachine (int id)
+        {
+            EngineerMachine joinEntry = _db.EngineerMachine.FirstOrDefault(x => x.EngineerMachineId == id);
+            _db.EngineerMachine.Remove(joinEntry);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
