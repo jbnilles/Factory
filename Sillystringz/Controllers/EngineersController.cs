@@ -78,15 +78,16 @@ namespace Sillystringz.Controllers
                 }
             }
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("details",new {id = engineerMachine.EngineerId});
         }
-        [HttpPost]
+        
         public ActionResult RemoveMachine (int id)
         {
             EngineerMachine joinEntry = _db.EngineerMachine.FirstOrDefault(x => x.EngineerMachineId == id);
+            int eId = joinEntry.EngineerId;
             _db.EngineerMachine.Remove(joinEntry);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("details", "engineers", new {id = eId});
         }
     }
 }

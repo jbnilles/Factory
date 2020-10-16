@@ -34,6 +34,7 @@ body {
 .card {
   text-align: center;
   background-color: #d6d0d0;
+  margin-bottom: 25px;
 }
 form{
   background-color: #d6d0d0;
