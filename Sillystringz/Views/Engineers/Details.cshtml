@@ -5,7 +5,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">
-      @Model.Name
+      Engineer Details
     </h1>
     <button class="btn btn-danger" onclick="window.location.href='/engineers';">View all Engineers</button>
   </div>
@@ -13,7 +13,7 @@
     <div class="col-6">
       <div class="card">
         <div class="card-header">
-          <h5>Licensed Engineers</h5>
+          <h5>Licensed Machines</h5>
         </div>
         <div class="card-body">
           @if(Model.EngineerMachines.Count == 0)
@@ -23,7 +23,7 @@
           <ul>
             @foreach (EngineerMachine em in @Model.EngineerMachines)
             {
-                <li>@em.Machine.Name | @Html.ActionLink("details","details","machines", new {id = em.MachineId})</li>
+                <li>@Html.ActionLink(em.Machine.Name,"details","machines", new {id = em.MachineId}) | @Html.ActionLink("Remove","removeMachine", new {id = em.EngineerMachineId})</li>
             }
           </ul>
           <div>

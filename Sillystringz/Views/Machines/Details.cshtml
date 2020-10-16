@@ -27,7 +27,7 @@
           <ul>
             @foreach (EngineerMachine em in @Model.EngineerMachines)
             {
-                <li>@em.Engineer.Name | @Html.ActionLink("details","details","engineers", new {id = em.EngineerId}) | @Html.ActionLink("Remove","removeEngineer", new {id = em.EngineerMachineId}) </li>
+                <li>@Html.ActionLink(em.Engineer.Name,"details","engineers", new {id = em.EngineerId}) | @Html.ActionLink("Remove","removeEngineer", new {id = em.EngineerMachineId}) </li>
             }
           </ul>
           <div>

@@ -3,7 +3,7 @@
 }
 
 @model Sillystringz.Models.Machine;
-<div class="Container">
+<div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Add a Engineer</h1>
   </div>
@@ -19,7 +19,7 @@
         @Html.DropDownList("EngineerId")
 
         <input class="btn btn-outline-dark" type="submit" value="Add" />
-        <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/machine/details/@Model.MachineId';">Cancel</button>
+        <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/machines/details/@Model.MachineId';">Cancel</button>
     }
   </div>
 

@@ -6,23 +6,27 @@
   <div class="jumbotron">
     <h1 class="display-4">Machines</h1>
   </div>
-  <div class="card card-body">
-    @if(Model.Count == 0)
-    {
-      <h6>There are no Machines at this time.</h6>
-    }
-    <ul>
-      @foreach(Machine machine in Model)
+  <div class="card">
+    <div class="card-header"> 
+      <h5>List of Machines</h5>
+    </div>
+    <div class="card-body">
+      @if(Model.Count == 0)
       {
-        <li>@machine.Name | @Html.ActionLink("details","details", new {id = machine.MachineId})</li>
+        <h6>There are no Machines at this time.</h6>
       }
-    </ul>
-    <div>
-      <button class="btn btn-danger" onclick="window.location.href='/machines/create';">New Machine</button>
-      <button class="btn btn-danger" onclick="window.location.href='/';">Home</button>
+      <ul>
+        @foreach(Machine machine in Model)
+        {
+          <li>@machine.Name | @Html.ActionLink("details","details", new {id = machine.MachineId})</li>
+        }
+      </ul>
+      <div>
+        <button class="btn btn-danger" onclick="window.location.href='/machines/create';">New Machine</button>
+        <button class="btn btn-danger" onclick="window.location.href='/';">Home</button>
+      </div>
     </div>
   </div>
-
-  @Html.Partial("Header")
-  @Html.Partial("Footer")
 </div>
+@Html.Partial("Header")
+@Html.Partial("Footer")

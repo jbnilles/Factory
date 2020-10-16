@@ -25,8 +25,8 @@ div#footer {
 .container {
   background-color: aquamarine;
   padding-bottom: 50px;
-  padding-top: 50px;
-  margin-top: 50px;
+  padding-top: 25px;
+  margin-top:  50px;
 }
 body {
   background-color: cornsilk;
