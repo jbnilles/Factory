@@ -16,7 +16,8 @@ div#footer {
   width:100%;
   color:#CCC;
   background:#333;
-  padding:8px;
+  padding:18px;
+  font-size: xx-small;
 }
 .jumbotron {
   text-align: center;
