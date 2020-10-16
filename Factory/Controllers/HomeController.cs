@@ -23,5 +23,14 @@ namespace Factory.Controllers
             
             return View(model);
         } 
+        [HttpPost]
+        public ActionResult Search(string input)
+        { 
+            Dictionary<string, object> model = new Dictionary<string, object>{};
+            model.Add("Engineers",_db.Engineers.Where(x => x.Name.Contains(input)).ToList());
+            model.Add("Machines",_db.Machine.Where(x => x.Name.Contains(input)).ToList());
+            
+            return View(model);
+        } 
     }
 }

@@ -1,0 +1,76 @@
+@{
+  Layout = "_Layout";
+}
+<script src="~/js/search.js"></script>
+@using Factory.Models;
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Search Results</h1>
+  </div>
+  <div id="landing-page">
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            <h5>Licensed Engineers</h5>
+          </div>
+          <div class="card-body">
+            @if(Model["Engineers"].Count == 0)
+            {
+              <p>There are no Licensed Engineers.</p>
+            }
+            <ul>
+              @foreach (Engineer e in @Model["Engineers"])
+              {
+                @if(@e.EngineerMachines.Count > 0)
+                {
+                  <li>@Html.ActionLink(e.Name,"details","engineers", new {id = e.EngineerId})  <a href="#" class="toggle" id="eid-@e.EngineerId">+</a> </li>
+                }
+                else
+                {
+                  <li>@Html.ActionLink(e.Name,"details","engineers", new {id = e.EngineerId}) </li>
+                }
+                
+                <ul class="start-hidden" id="ul-e-@e.EngineerId"> 
+                  @foreach (EngineerMachine engineeringMachine in e.EngineerMachines)
+                  {
+                      <li>  @engineeringMachine.Machine.Name</li>
+                  }
+                </ul>
+              }
+            </ul>
+            <div>
+              <button class="btn btn-info" onclick="window.location.href='/engineers/create';">New Engineer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            <h5>Machines</h5>
+          </div>
+          <div class="card-body">
+            @if(Model["Machines"].Count == 0)
+            {
+              <p>Factory has no Machines.</p>
+            }
+            <ul>
+              @foreach (Machine m in @Model["Machines"])
+              {
+                  <li>@Html.ActionLink(m.Name,"details","machines", new {id = m.MachineId})</li>
+              }
+            </ul>
+            <div>
+              <button class="btn btn-info" onclick="window.location.href='/machines/create';">New Machine</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  @Html.Partial("Header")
+  @Html.Partial("Footer")
+</div>

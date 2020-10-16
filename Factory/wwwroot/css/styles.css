@@ -48,3 +48,10 @@ img {
 ul {
   list-style: none;
 }
+#search-bar {
+  display: block;
+  float: right;
+}
+.start-hidden{
+  display: none;
+}
