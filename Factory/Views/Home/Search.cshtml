@@ -25,7 +25,7 @@
               {
                 @if(@e.EngineerMachines.Count > 0)
                 {
-                  <li>@Html.ActionLink(e.Name,"details","engineers", new {id = e.EngineerId})  <a href="#" class="toggle" id="eid-@e.EngineerId">+</a> </li>
+                  <li>@Html.ActionLink(e.Name,"details","engineers", new {id = e.EngineerId})  <a href="#" class="toggle-eng" id="eid-@e.EngineerId">+</a> </li>
                 }
                 else
                 {
@@ -33,10 +33,13 @@
                 }
                 
                 <ul class="start-hidden" id="ul-e-@e.EngineerId"> 
+                  <h6>Licensed Machines</h6>
+                  
                   @foreach (EngineerMachine engineeringMachine in e.EngineerMachines)
                   {
                       <li>  @engineeringMachine.Machine.Name</li>
                   }
+                
                 </ul>
               }
             </ul>
@@ -59,7 +62,27 @@
             <ul>
               @foreach (Machine m in @Model["Machines"])
               {
-                  <li>@Html.ActionLink(m.Name,"details","machines", new {id = m.MachineId})</li>
+                 @if(@m.EngineerMachines.Count > 0)
+                {
+                  <li>@Html.ActionLink(m.Name,"details","machines", new {id = m.MachineId}) <a href="#" class="toggle-mac" id="mid-@m.MachineId">+</a></li>
+                }
+                else
+                {
+                  <li>@Html.ActionLink(m.Name,"details","machines", new {id = m.MachineId})</li> 
+                }
+                
+                <ul class="start-hidden" id="ul-m-@m.MachineId"> 
+                  <h6>Licensed Engineers</h6>
+                  
+                  @foreach (EngineerMachine engineeringMachine in m.EngineerMachines)
+                  {
+                      <li>  @engineeringMachine.Engineer.Name</li>
+                  }
+                
+                </ul>
+                 
+                 
+                  
               }
             </ul>
             <div>
