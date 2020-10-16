@@ -64,11 +64,11 @@ namespace Sillystringz.Controllers
         public ActionResult AddEngineer(int id)
         {
             Machine thisMachine = _db.Machine.FirstOrDefault(s => s.MachineId == id);
-            ViewBag.EngineerId = new SelectList(_db.Engineers, "MachineId", "Name");
+            ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
             return View(thisMachine);
         }
         [HttpPost]
-        public ActionResult AddSpecialty(EngineerMachine engineerMachine)
+        public ActionResult AddEngineer(EngineerMachine engineerMachine)
         {
             if (engineerMachine.EngineerId != 0)
             {

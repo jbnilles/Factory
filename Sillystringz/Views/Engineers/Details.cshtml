@@ -8,6 +8,7 @@
       @Model.Name
     </h1>
     <button class="btn btn-danger" onclick="window.location.href='/engineers';">Engineers</button>
+    <button class="btn btn-danger" onclick="window.location.href='/engineers/edit/@Model.EngineerId';">Edit</button>
     <button class="btn btn-danger" onclick="window.location.href='/engineers/delete/@Model.EngineerId';">Delete</button>
 
 
@@ -23,7 +24,7 @@
         <ul>
           @foreach (EngineerMachine em in @Model.EngineerMachines)
           {
-              <li>@em.Machine.Name | @Html.ActionLink("details","details","Machine", new {id = em.MachineId})</li>
+              <li>@em.Machine.Name | @Html.ActionLink("details","details","machines", new {id = em.MachineId})</li>
           }
         </ul>
         <div>
@@ -39,6 +40,7 @@
     </div>
   </div>
   
-  
+  @Html.Partial("Header")
+  @Html.Partial("Footer")  
 
 </div>

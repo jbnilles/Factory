@@ -68,7 +68,7 @@ namespace Sillystringz.Controllers
             return View(thisEngineer);
         }
         [HttpPost]
-        public ActionResult AddSpecialty(EngineerMachine engineerMachine)
+        public ActionResult AddMachine(EngineerMachine engineerMachine)
         {
             if (engineerMachine.MachineId != 0)
             {

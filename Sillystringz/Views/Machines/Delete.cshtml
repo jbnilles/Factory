@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-@model Sillystringz.Models.Engineer
+@model Sillystringz.Models.Machine
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Delete @Model.Name</h1>
@@ -12,9 +12,8 @@
     @using (Html.BeginForm())
     {
       <input class="btn btn-outline-dark" type="submit" value="Delete" />
-      <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/engineers/details/@Model.EngineerId';">Cancel</button>
+      <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/machines/details/@Model.MachineId';">Cancel</button>
     }
-    
   </div>
     @Html.Partial("Header")
   @Html.Partial("Footer")

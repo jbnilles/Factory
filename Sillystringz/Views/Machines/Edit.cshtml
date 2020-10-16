@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Sillystringz.Models.Engineer
+@model Sillystringz.Models.Machine
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">
@@ -14,7 +14,7 @@
 
     @using (Html.BeginForm())
     {
-      @Html.HiddenFor(model => model.EngineerId)
+      @Html.HiddenFor(model => model.MachineId)
 
       @Html.LabelFor(model => model.Name)
       @Html.EditorFor(model => model.Name, new { @required = "required"})
@@ -22,10 +22,11 @@
       @Html.EditorFor(model => model.Description)
 
       
-      <input type="submit" value="Edit Engineer" class="btn btn-outline-dark" />
-      <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/engineers/details/@Model.EngineerId';">Cancel</button>
+      <input type="submit" value="Edit Machine" class="btn btn-outline-dark" />
+      <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/machines/details/@Model.MachineId';">Cancel</button>
     }
   </div>
 </div>
   @Html.Partial("Header")
   @Html.Partial("Footer")
+
