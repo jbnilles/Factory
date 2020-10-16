@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the Sillystringz</h1>
+  </div>
+  <div id="landing-page">
+    <div class="card">
+      <div class="card-body">
+        <p>This program is design to help track Engineers and Machines. You can add Engineers and give a small description about them and you can add Machines and give them a description. You then can link Machines and Engineers to keep track of which Engineers can work on which machines.</p>
+        <button class="btn btn-outline-danger" onclick="window.location.href='/engineers';">Engineers Page</button>
+        <button class="btn btn-outline-danger" onclick="window.location.href='/machines';">Machines Page</button>
+      </div>
+    </div>
+  </div>
+  
+  @Html.Partial("Header")
+  @Html.Partial("Footer")
+</div>

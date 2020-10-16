@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+@using Sillystringz.Models;
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Engineers</h1>
+  </div>
+  <div class="card card-body">
+    @if(Model.Count == 0)
+    {
+      <h6>There are no Engineers at this time.</h6>
+    }
+    <ul>
+      @foreach(Engineer engineer in Model)
+      {
+        <li>@engineer.Name | @Html.ActionLink("details","Details", new {id = engineer.EngineerId})</li>
+      }
+    </ul>
+    <div>
+      <button class="btn btn-danger" onclick="window.location.href='/engineers/create';">New Engineer</button>
+      <button class="btn btn-danger" onclick="window.location.href='/';">Home</button>
+    </div>
+  </div>
+
+  @Html.Partial("Header")
+  @Html.Partial("Footer")
+</div>

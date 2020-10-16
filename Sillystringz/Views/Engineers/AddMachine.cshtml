@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Sillystringz.Models.Engineer;
+<div class="Container">
+  <div class="jumbotron">
+    <h1 class="display-4">Add a Machine</h1>
+  </div>
+
+  <div class="card card-body">
+    <h4>Add a Machine to @Html.DisplayFor(model => model.Name):</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.EngineerId)
+
+        @Html.Label("Select Machine")
+        @Html.DropDownList("MachineId")
+
+        <input class="btn btn-outline-dark" type="submit" value="Save" />
+        <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/engineers/details/@Model.EngineerId';">Cancel</button>
+    }
+  </div>
+
+
+</div>
+
+

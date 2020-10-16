@@ -1,0 +1,44 @@
+@{
+  Layout = "_Layout";
+}
+@using Sillystringz.Models;
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">
+      @Model.Name
+    </h1>
+    <button class="btn btn-danger" onclick="window.location.href='/engineers';">Engineers</button>
+    <button class="btn btn-danger" onclick="window.location.href='/engineers/delete/@Model.EngineerId';">Delete</button>
+
+
+
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="card card-body">
+        @if(Model.EngineerMachines.Count == 0)
+        {
+          <p>@Model.Name has no Machines linked.</p>
+        }
+        <ul>
+          @foreach (EngineerMachine em in @Model.EngineerMachines)
+          {
+              <li>@em.Machine.Name | @Html.ActionLink("details","details","Machine", new {id = em.MachineId})</li>
+          }
+        </ul>
+        <div>
+          <button class="btn btn-danger" onclick="window.location.href='/engineers/addMachine/@Model.EngineerId';">Link a Machine</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card card-body">
+        <h5>Name: @Model.Name</h5>
+        <h5>Description: @Model.Description</h5>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</div>
