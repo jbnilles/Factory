@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine;
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Add a Engineer</h1>
+  </div>
+
+  <div class="card card-body">
+    <h4>Add a Engineer to @Html.DisplayFor(model => model.Name):</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.MachineId)
+
+        @Html.Label("Select Engineer")
+        @Html.DropDownList("EngineerId")
+
+        <input class="btn btn-outline-dark" type="submit" value="Add" />
+        <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/machines/details/@Model.MachineId';">Cancel</button>
+    }
+  </div>
+
+
+</div>
+  @Html.PartialAsync("Header")
+  @Html.PartialAsync("Footer")
+

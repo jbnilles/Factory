@@ -1,0 +1,68 @@
+@{
+  Layout = "_Layout";
+}
+@using Factory.Models;
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to the Factory</h1>
+  </div>
+  <div id="landing-page">
+    <div class="card">
+      <div class="card-body">
+        <p>This program is design to help track Engineers and Machines. You can add Engineers and give a small description about them and you can add Machines and give them a description. You then can link Machines and Engineers to keep track of which Engineers can work on which machines.</p>
+        <button class="btn btn-outline-info" onclick="window.location.href='/engineers';">Engineers Page</button>
+        <button class="btn btn-outline-info" onclick="window.location.href='/machines';">Machines Page</button>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Licensed Engineers</h5>
+        </div>
+        <div class="card-body">
+          @if(Model["Engineers"].Count == 0)
+          {
+            <p>There are no Licensed Engineers.</p>
+          }
+          <ul>
+            @foreach (Engineer e in @Model["Engineers"])
+            {
+                <li>@Html.ActionLink(e.Name,"details","engineers", new {id = e.EngineerId}) </li>
+            }
+          </ul>
+          <div>
+            <button class="btn btn-info" onclick="window.location.href='/engineers/create';">New Engineer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Machines</h5>
+        </div>
+        <div class="card-body">
+          @if(Model["Machines"].Count == 0)
+          {
+            <p>Factory has no Machines.</p>
+          }
+          <ul>
+            @foreach (Machine m in @Model["Machines"])
+            {
+                <li>@Html.ActionLink(m.Name,"details","machines", new {id = m.MachineId})</li>
+            }
+          </ul>
+          <div>
+            <button class="btn btn-info" onclick="window.location.href='/machines/create';">New Machine</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  @Html.PartialAsync("Header")
+  @Html.PartialAsync("Footer")
+</div>
