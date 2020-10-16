@@ -16,7 +16,7 @@ namespace Sillystringz.Controllers
         }
         public ActionResult Index()
         {
-            List<Engineer> model = _db.Engines.OrderBy(x => x.Name).ToList();
+            List<Engineer> model = _db.Engineers.OrderBy(x => x.Name).ToList();
             return View(model);
         }
         public ActionResult Create()
@@ -51,7 +51,7 @@ namespace Sillystringz.Controllers
         }
         public ActionResult Edit(int id)
         {                    
-            Course thisEngineer = _db.Engineers.FirstOrDefault(x => x.EngineerId == id);
+            Engineer thisEngineer = _db.Engineers.FirstOrDefault(x => x.EngineerId == id);
             return View(thisEngineer);
         }
         [HttpPost]

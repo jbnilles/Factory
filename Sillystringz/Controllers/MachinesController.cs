@@ -37,7 +37,7 @@ namespace Sillystringz.Controllers
         }
         public ActionResult Delete(int id)
         {
-            Engineer thisMachine = _db.Machine.FirstOrDefault(x => x.MachineId == id);
+            Machine thisMachine = _db.Machine.FirstOrDefault(x => x.MachineId == id);
             return View(thisMachine);
         }
 
@@ -51,7 +51,7 @@ namespace Sillystringz.Controllers
         }
         public ActionResult Edit(int id)
         {                    
-            Course thisMachine = _db.Machine.FirstOrDefault(x => x.MachineId == id);
+            Machine thisMachine = _db.Machine.FirstOrDefault(x => x.MachineId == id);
             return View(thisMachine);
         }
         [HttpPost]
