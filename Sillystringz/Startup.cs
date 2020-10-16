@@ -26,7 +26,7 @@ namespace Sillystringz
         services.AddMvc();
 
         services.AddEntityFrameworkMySql()
-            .AddDbContext<SillysringzContext>(options => options  //change here
+            .AddDbContext<SillystringzContext>(options => options  //change here
             .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
