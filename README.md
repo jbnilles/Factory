@@ -85,7 +85,7 @@
   - [ ] Add inspection dates to the machines, or dates of license renewal to the engineers.
   - [ ] Add a table for incidents, showing which engineer repaired which machine.
   - [ ] Add a table for locations, and specify which engineers or machines are located at which factory.
-  - [ ] Add a search bar in header that will search both Machines and Engineers and display a list of results
+  - [X] Add a search bar in header that will search both Machines and Engineers and display a list of results
 
 ## Resources (Documentation and other links)
 
