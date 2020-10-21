@@ -58,13 +58,13 @@
 
 
 ### Screenshots
-<img src="Factory/wwwroot/images/FactoryDbMap.png" width="500px">
+<img src="./Factory/wwwroot/images/FactoryDbMap.png" width="500px">
 <p>This is the sctructure of the MySQL</p>
-<img src="Factory/wwwroot/images/Landing.png" width="500px">
+<img src="./Factory/wwwroot/images/Landing.png" width="500px">
 <p>This is the Landing Page.</p>
-<img src="Factory/wwwroot/images/EngineersIndex.png" width="500px">
+<img src="./Factory/wwwroot/images/EngineersIndex.png" width="500px">
 <p>This is the Engineers Home Page.</p>
-<img src="Factory/wwwroot/images/MachineDetails.png" width="500px">
+<img src="./Factory/wwwroot/images/MachineDetails.png" width="500px">
 <p>This is the Machine Details Page.</p>
 
 ### Features
